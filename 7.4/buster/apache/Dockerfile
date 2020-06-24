@@ -187,8 +187,7 @@ RUN set -eux; \
 	# Install tools
 	openssl \
 	nano \        
-	iputils-ping \
-	locales \
+	iputils-ping \	
 	sqlite3 \
 	ca-certificates \
 	supervisor \
@@ -293,8 +292,8 @@ RUN install-php-extensions pdo_mysql imagick amqp soap sockets intl ldap gd zip 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Set locales
-RUN apt-get install -yq --no-install-recommends locales
-RUN locale-gen en_US.UTF-8 en_GB.UTF-8 de_DE.UTF-8 es_ES.UTF-8 fr_FR.UTF-8 it_IT.UTF-8 km_KH sv_SE.UTF-8 fi_FI.UTF-8
+#RUN apt-get install -yq --no-install-recommends locales
+#RUN locale-gen en_US.UTF-8 en_GB.UTF-8 de_DE.UTF-8 es_ES.UTF-8 fr_FR.UTF-8 it_IT.UTF-8 km_KH sv_SE.UTF-8 fi_FI.UTF-8
 ##<own configuration>##
 
 ENTRYPOINT ["docker-php-entrypoint"]

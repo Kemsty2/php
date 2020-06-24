@@ -32,10 +32,21 @@ ENV PHPIZE_DEPS \
 RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
-	$PHPIZE_DEPS \
-	ca-certificates \
+	$PHPIZE_DEPS \	
 	curl \
 	xz-utils \
+	apt-utils \	
+	wget \
+	unzip\
+	# Install git
+	git \      
+	# Install tools
+	openssl \
+	nano \        
+	iputils-ping \	
+	sqlite3 \
+	ca-certificates \
+	supervisor \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
@@ -177,20 +188,7 @@ RUN set -eux; \
 	libssl-dev \
 	libxml2-dev \
 	zlib1g-dev \
-	${PHP_EXTRA_BUILD_DEPS:-} \
-	apt-utils \
-	curl \
-	wget \
-	unzip\
-	# Install git
-	git \      
-	# Install tools
-	openssl \
-	nano \        
-	iputils-ping \	
-	sqlite3 \
-	ca-certificates \
-	supervisor \
+	${PHP_EXTRA_BUILD_DEPS:-} \	
 	&& apt-get clean && rm -rf /var/lib/apt/lists/* \
 	; \	
 	\

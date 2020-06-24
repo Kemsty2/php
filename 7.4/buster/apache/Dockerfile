@@ -288,10 +288,6 @@ RUN docker-php-ext-enable sodium
 ##<own configuration>##
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
 
-COPY docker/apache/php.ini /usr/local/etc/php/conf.d/app.ini
-
-RUN pear config-set http_proxy http://192.168.200.200:3128
-
 RUN install-php-extensions pdo_mysql imagick amqp soap sockets intl ldap gd zip opcache bcmath
 
 # Install composer

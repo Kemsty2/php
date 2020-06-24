@@ -47,6 +47,7 @@ RUN set -eux; \
 	sqlite3 \
 	ca-certificates \
 	supervisor \
+	locales\
 	; \
 	rm -rf /var/lib/apt/lists/*
 

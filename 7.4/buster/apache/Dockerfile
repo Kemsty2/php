@@ -285,7 +285,7 @@ RUN docker-php-ext-enable sodium
 ##<own configuration>##
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
 
-RUN install-php-extensions pdo_mysql imagick amqp soap sockets intl ldap gd zip opcache bcmath
+RUN install-php-extensions pdo_mysql imagick amqp soap sockets intl ldap gd zip opcache bcmath mysqli
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
